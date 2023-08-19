@@ -1,8 +1,10 @@
 const HomeLayout = ({children}) => {
   return (
-    <div>
+    <div className="bg-white text-black h-screen w-full">
       Navbar
-      {children}
+      <div>
+        {children}
+      </div>
     </div>
   )
 }
