@@ -1,8 +1,8 @@
-import Chessboard from "@/components/Chessboard"
+import Chessboard from "@/components/chessboard"
 
 const RoomLayout = ({children}) => {
   return (
-    <div>
+    <div className="h-full w-full">
       Chess Board : {children}
       <div className="flex flex-col items-center justify-center min-h-screen">
         <div className=" border border-black">

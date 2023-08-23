@@ -1,7 +1,9 @@
+import Navbar from "@/components/navbar"
+
 const HomeLayout = ({children}) => {
   return (
     <div className="bg-white text-black h-screen w-full">
-      Navbar
+      <Navbar />
       <div>
         {children}
       </div>

@@ -1,7 +1,8 @@
-const RoomPage = () => {
+const RoomPage = ({params}) => {
   return (
-    <div>
-      Playersssssssssssss
+    <div className="h-full w-full">
+      Playersssssssssssss 
+      room : {params.id}
     </div>
   )
 }
