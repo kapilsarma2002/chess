@@ -10,31 +10,33 @@ datasource db {
 }
 
 model Player {
-  id        Int       @id @default(autoincrement())
-  username  String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  rooms     Room[]    // A player can be in multiple rooms
-  moves     Move[]    // Moves made by the player
+  id        String   @id @default(uuid())
+  userName  String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  clerkId   String   @unique
+  email     String   @unique
+  rooms     Room[] // A player can be in multiple rooms
+  moves     Move[] // Moves made by the player
 }
 
 model Room {
-  id        Int       @id @default(autoincrement())
-  roomId    String    @unique // Unique room identifier
-  players   Player[]  // Players in the room
-  moves     Move[]    // Moves made in the room
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  id        Int      @id @default(autoincrement())
+  roomId    String   @unique // Unique room identifier
+  players   Player[] // Players in the room
+  moves     Move[] // Moves made in the room
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Move {
-  id        Int       @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   roomId    Int
-  playerId  Int
-  move      String    // Store the move data in any suitable format
-  createdAt DateTime  @default(now())
-  
+  playerId  String
+  move      String // Store the move data in any suitable format
+  createdAt DateTime @default(now())
+
   // Establishing relationships with Player and Room
-  player    Player    @relation(fields: [playerId], references: [id])
-  room      Room      @relation(fields: [roomId], references: [id])
+  player Player @relation(fields: [playerId], references: [id])
+  room   Room   @relation(fields: [roomId], references: [id])
 }
