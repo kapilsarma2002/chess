@@ -1,13 +1,10 @@
-import Chessboard from "@/components/chessboard"
+import Board from '@/components/chessboard'
 
-const RoomLayout = ({children}) => {
+const RoomLayout = ({ children }) => {
   return (
-    <div className="h-full w-full">
-      Chess Board : {children}
-      <div className="flex flex-col items-center justify-center h-full w-full">
-        <div className=" border border-black">
-          <Chessboard />
-        </div>
+    <div className="flex flex-col items-center justify-center h-[calc(100vh-45px)] border border-black">
+      <div className="border border-black">
+        <Board />
       </div>
     </div>
   )

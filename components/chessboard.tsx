@@ -1,23 +1,13 @@
-import React from 'react'
+'use client'
 
-const Chessboard = () => {
-  const rows = 8
-  const cols = 8
+import Chessboard from "chessboardjsx"
 
+const Board = () => {
   return (
-    <div className="grid grid-cols-8 gap-0">
-      {Array.from({ length: rows }).map((_, rowIndex) =>
-        Array.from({ length: cols }).map((_, colIndex) => (
-          <div
-            key={`${rowIndex}-${colIndex}`}
-            className={`w-16 h-16 ${
-              (rowIndex + colIndex) % 2 === 0 ? 'bg-white' : 'bg-black'
-            }`}
-          />
-        ))
-      )}
+    <div className="border border-black">
+      <Chessboard position="start" />
     </div>
   )
 }
 
-export default Chessboard
+export default Board
