@@ -18,11 +18,16 @@ const getStatus = async () => {
 const HomePage = async () => {
   //const { last } = await getStatus()
 
-  return <div className="bg-white text-black h-screen w-full p-12">
-    Home page
-    <br />
-    <b>Your Rooms:</b>
-  </div>
+  return (
+    <div
+      className="bg-white text-black h-full w-full p-12
+      dark:bg-slate-900 dark:text-white/80"
+    >
+      Home page
+      <br />
+      <b>Your Rooms:</b>
+    </div>
+  )
 }
 
 export default HomePage
