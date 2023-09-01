@@ -27,7 +27,7 @@ const createNewUser = async () => {
       if (e instanceof Prisma.PrismaClientKnownRequestError) {
         // The .code property can be accessed in a type-safe manner
         if (e.code === 'P2002') {
-          ;<UniqueErrorHandler props="here is a unique constraint violation, a new user cannot be created with this email" />
+          <UniqueErrorHandler props="here is a unique constraint violation, a new user cannot be created with this email" />
         }
       }
       throw e
