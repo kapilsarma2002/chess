@@ -1,13 +1,20 @@
+import NewRoom from '@/components/newroomcard'
 import RoomCard from '@/components/room'
+import Link from 'next/link'
+import { redirect } from 'next/navigation'
+import { useState } from 'react'
 
 const RoomPage = () => {
 
-  const rooms = [1,2,3,4,5]
+  let rooms = [1, 2, 3, 4, 5] 
 
   return (
-    <div>
-      This page contains all the available rooms
-      <div className="ml-4">
+    <div className="h-full w-full border border-black">
+      <div className='flex flex-row justify-between items-center'>
+        <h3 className="m-12 ">Active rooms :</h3>
+        <NewRoom rooms />
+      </div>
+      <div className=" ml-12">
         <RoomCard />
       </div>
     </div>
