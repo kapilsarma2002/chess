@@ -17,11 +17,11 @@ const RoomCard = () => {
   const rooms = [1,2,3,4,6]
 
   return (
-    <div className="grid grid-flow-row grid-cols-4 gap-4">
+    <div className="grid grid-flow-row grid-cols-4 gap-4 mr-12">
       {rooms.map((room) => (
         <div
           key={room}
-          className="border border-black-20 h-[160px] rounded-lg"
+          className="border border-black-20 h-[160px] rounded-lg bg-slate-100"
         >
           <Link href={`/room/${room}`}>{room}</Link>
         </div>
