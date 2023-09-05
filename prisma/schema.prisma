@@ -21,17 +21,18 @@ model Player {
 }
 
 model Room {
-  id        Int      @id @default(autoincrement())
-  roomId    String   @unique // Unique room identifier
+  id        String   @id @default(uuid())
+  // roomId    String   @unique // Unique room identifier
   players   Player[] // Players in the room
   moves     Move[] // Moves made in the room
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  //createdBy String
+  //player Player @relation(fields: [createdBy], references: [id])
 }
 
 model Move {
   id        Int      @id @default(autoincrement())
-  roomId    Int
+  roomId    String
   playerId  String
   move      String // Store the move data in any suitable format
   createdAt DateTime @default(now())

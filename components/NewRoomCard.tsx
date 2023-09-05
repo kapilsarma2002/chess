@@ -1,5 +1,6 @@
 'use client'
 
+import { createNewRoom } from '@/utils/api'
 import { useRouter } from 'next/navigation'
 import { resolve } from 'path'
 import { ToastContainer, toast } from 'react-toastify'
@@ -7,21 +8,17 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const NewRoom = (rooms) => {
   const router = useRouter()
-  let idx = 1
 
   const createRoom = async () => {
-    idx++
     const response = await toast.promise(
-      // fetch(`https://jsonplaceholder.typicode.com/todos/${idx}`),
-      new Promise(resolve => setTimeout(resolve, 3000)),
+      const data = await createNewRoom(),
       {
         pending: 'Room is being created',
         success: 'Room has been created',
         error: 'Cannot create a room',
       }
     )
-    console.log(response)
-    router.push(`/room/${idx}`)
+    router.push(`/room/${data.id}`)
   }
 
   return (
