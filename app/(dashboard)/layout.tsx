@@ -1,9 +1,9 @@
 import { UserButton } from '@clerk/nextjs'
-import NavBar from '@/components/navbar'
+import NavBar from '@/components/NavBar'
 import Link from 'next/link'
 import Image from 'next/image'
 import { getUserByClerkID } from '@/utils/auth'
-import ThemeSwitcher from '@/components/themeswitcher'
+import ThemeSwitcher from '@/components/ThemeSwitcher'
 
 const HomeLayout = async ({ children }: any) => {
   const user = await getUserByClerkID()

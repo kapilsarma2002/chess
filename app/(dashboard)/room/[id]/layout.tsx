@@ -1,4 +1,4 @@
-import Board from '@/components/chessboard'
+import Board from '@/components/ChessBoard'
 
 const RoomLayout = ({ children }) => {
   return (

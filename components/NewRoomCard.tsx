@@ -2,23 +2,21 @@
 
 import { createNewRoom } from '@/utils/api'
 import { useRouter } from 'next/navigation'
-import { resolve } from 'path'
 import { ToastContainer, toast } from 'react-toastify'
+import { notifyRoomCreated } from '@/components/Notification'
 import 'react-toastify/dist/ReactToastify.css'
 
-const NewRoom = (rooms) => {
+const NewRoom = () => {
   const router = useRouter()
 
   const createRoom = async () => {
-    const response = await toast.promise(
-      const data = await createNewRoom(),
-      {
-        pending: 'Room is being created',
-        success: 'Room has been created',
-        error: 'Cannot create a room',
-      }
-    )
-    router.push(`/room/${data.id}`)
+    try {
+      const roomData = await createNewRoom()
+      notifyRoomCreated(roomData.id);
+      router.push(`/room/${roomData.id}`)
+    } catch (error) {
+      console.error('Error creating room:', error);
+    }
   }
 
   return (

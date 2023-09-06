@@ -1,31 +1,12 @@
-'use client'
+const RoomCard = ({ room }) => {
 
-import Link from "next/link"
-
-type Room = {
-  id: number,
-  roomId: string,
-  capacity: number,
-  player1: string,
-  player2: string,
-  createdAt: Date,
-  timeLimit: string 
-}
-
-const RoomCard = () => {
-
-  const rooms = [1,2,3,4,6]
+  const date = new Date(room.createdAt).toDateString()
 
   return (
-    <div className="grid grid-flow-row grid-cols-4 gap-4 mr-12">
-      {rooms.map((room) => (
-        <div
-          key={room}
-          className="border border-black-20 h-[160px] rounded-lg bg-slate-100"
-        >
-          <Link href={`/room/${room}`}>{room}</Link>
-        </div>
-      ))}
+    <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow dark:divide-gray-700 dark:bg-slate-900 dark:shadow-slate-700">
+      <div className="px-4 py-5">{date}</div>
+      <div className="px-4 py-5">{room.id}</div>
+      <div className="px-4 py-4">won by : </div>
     </div>
   )
 }

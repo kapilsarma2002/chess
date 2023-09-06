@@ -12,8 +12,11 @@ const Notification = () => {
 
 export default Notification
 
-export const showSuccessNotification = (message) => {
-  toast.success(message)
+export const notifyRoomCreated = (roomName) => {
+  toast.success(`Room "${roomName}" has been created!`, {
+    position: 'top-right',
+    autoClose: 3000, // Time for notification to auto-close (in milliseconds)
+  })
 }
 
 export const showErrorNotification = (message) => {
