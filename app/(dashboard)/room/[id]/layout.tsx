@@ -5,8 +5,13 @@ const RoomLayout = ({ children }) => {
   return (
     <div className="flex flex-col items-center justify-center h-[calc(100vh-60px)] border border-black">
       <div className="border border-black">
+        <div>
+          <Timer />
+        </div>
         <Board />
-        <Timer />
+        <div>
+          <Timer />
+        </div>
       </div>
     </div>
   )

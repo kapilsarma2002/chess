@@ -26,7 +26,8 @@ model Room {
   players   Player[] // Players in the room
   moves     Move[] // Moves made in the room
   createdAt DateTime @default(now())
-  wonBy String
+  wonBy     String
+  lostBy    String
   //createdBy String
   //player Player @relation(fields: [createdBy], references: [id])
 }

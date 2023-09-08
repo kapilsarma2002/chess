@@ -21,18 +21,14 @@ function MyTimer({ expiryTimestamp }) {
   })
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h1>react-timer-hook </h1>
-      <p>Timer Demo</p>
-      <div style={{ fontSize: '100px' }}>
-        <span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:
-        <span>{seconds}</span>
+    <div className='text-center'>
+      <div className='text-5xl'>
+        <span>{minutes}</span>:<span>{seconds}</span>
       </div>
-      <p>{isRunning ? 'Running' : 'Not running'}</p>
-      <button onClick={start}>Start</button>
-      <button onClick={pause}>Pause</button>
-      <button onClick={resume}>Resume</button>
-      <button
+      {/* <button onClick={start}>Start</button> */}
+      <button className='border border-black mr-4' onClick={pause}>Pause</button>
+      <button className='border border-black'onClick={resume}>Resume</button>
+      {/* <button
         onClick={() => {
           // Restarts to 5 minutes timer
           const time = new Date()
@@ -41,7 +37,7 @@ function MyTimer({ expiryTimestamp }) {
         }}
       >
         Restart
-      </button>
+      </button> */}
     </div>
   )
 }
